@@ -1,0 +1,1 @@
+git checkout -- important_note.txt
