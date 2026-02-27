@@ -1,0 +1,74 @@
+pwd
+sudo apt-get update
+whoam i
+whoami
+сд
+cl
+cdddddddddssssscds 
+cd
+git clone https://github.com/mariaefim/bioinformatics_hw 
+cd bioinformatics_hw 
+echo "# Bioinformatics homework 1 подготовка репозитория. вот так вот получается" >> README.md
+cat README.md
+sed -i '1d' README.md
+cat README.md
+git add README.md
+git commit -m "Init"
+git config --global user.email "m.efimova@enterpack.pro"
+git config --global user.name "mariaefim"
+git push origin main
+git add README.md
+git commit -m "Init"
+git push origin main
+ls -1
+cd bioinformatics_hw
+ls -1
+git push origin main
+mkdir -p linux_task/data/raw/
+cd linux_task/data/raw/
+touch sample1.tsv sample2.tsv sample3.tsv
+echo -e "GeneID\tExpression_Value" > sample1.tsv
+cat sample1.tsv
+cd ~/bioinformatics_hw
+git add linux_task/
+git commit -m "Create raw data structure"
+git push origin main
+cd ~/bioinformatics_hw/linux_task/data/raw/
+xcat <<EOF > sequencing_summary.txt
+run_id: RUN001
+date: 2026-02-18
+sample: sample1
+platform: Illumina
+read_length: 150
+total_reads: 1024
+sample: sample2
+total_reads: 2048
+sample: sample3
+total_reads: 4096
+EOF
+
+grep "sample" sequencing_summary.txt > samples_list.txt
+count=$(grep "sample" sequencing_summary.txt | wc -l)
+echo "Total samples found: $count" >> samples_list.txt
+tail -n 5 samples_list.txt
+cd ~/bioinformatics_hw
+git add linux_task/data/raw/*.txt
+git commit -m "Add sample list and count"
+git push origin main
+git checkout -b git-practice
+echo "This is very important data." > important_note.txt
+git add important_note.txt
+git commit -m "Add important note"
+rm important_note.txt
+ls important_note.txt
+git status
+git checkout -- important_note.txt
+cd ~/bioinformatics_hw
+echo "git checkout -- important_note.txt" > git_command.txt
+git add important_note.txt git_command.txt
+git commit -m "Restore deleted file"
+git branch
+git push origin git-practice
+nano terminal_history.txt
+history > terminal_history.txt
+nano terminal_history.txt
